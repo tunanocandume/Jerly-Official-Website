@@ -10,12 +10,49 @@ import MemberModal from './components/MemberModal';
 import './App.css';
 
 const members = [
-  { name: 'いたりー', part: 'read', color: '#B0C4DE', image: '/member1.jpg' },
-  { name: 'ﾍﾟﾝﾍﾟﾚﾍﾟﾝ', part: 'chorus', color: '#417ab1', image: '/member2.jpg' },
-  { name: 'きぬ', part: 'chorus', color: '#001e43', image: '/member3.jpg' },
-  { name: 'おむ', part: 'chorus', color: '#2c2f8e', image: '/member4.jpg' },
-  { name: 'サランラップ橋本', part: 'bass', color: '#0068b7', image: '/member5.jpg' },
-  { name: 'ロバート', part: 'v.p.', color: '#00479d', image: '/member6.jpg' },
+  { name: 'いたりー', part: 'Read', color: '#B0C4DE', image: '/member1.jpg', 
+    description: [
+      '第二の故郷はイタリア',
+      'ホワイトボード使ってるようじゃダメか…歌詞はね、入れとかないと。って時がある',
+      'ピアスホール一生不安定',
+      'メンバーから寝坊してないか心配されがち',
+      '支度最速10分(その後テストを受けるが単位取得ならず)'
+    ] },
+  { name: 'ﾍﾟﾝﾍﾟﾚﾍﾟﾝ', part: 'Chorus', color: '#417ab1', image: '/member2.jpg', description: [
+    '幼少期弟の頭をかじり歯が抜けた',
+    '人に興味がない',
+    'バイトが恋人',
+    'すぐしぬ‼️',
+    'アー写はAIによる画像生成(?)'
+  ] },
+  { name: 'きぬ', part: 'Chorus', color: '#001e43', image: '/member3.jpg', description: [
+    '細身(イケメン)彼氏募集中',
+    '遅刻魔、うんちの化身(？)',
+    '白飛びで亡霊みたいになる女',
+    '撮影日にスタジオでメイクする',
+    '髪が時々変色する(今はイカ墨中)'
+  ] },
+  { name: 'おむ', part: 'Chorus', color: '#2c2f8e', image: '/member4.jpg', description: [
+    'エナジードリンクを酸素と同じくらい体内に取り込んでいる',
+    '普段リーダーとして見られてないが、都合の良い時だけ「リーダー！」って言われてる',
+    '酒でバカ酔いして転倒・出血',
+    '食べても体重が変わらない生きるテセウスの船',
+    'パチモン増殖中'
+  ] },
+  { name: 'サランラップ橋本', part: 'Bass', color: '#0068b7', image: '/member5.jpg', description: [
+    '練習にコミケの戦利品を持ってくる',
+    'ウエハースを配ってるのは徳を積みたいから',
+    '鬼滅でいうと善逸',
+    'スタバンど緊張、ソロパートニヤニヤ(3年目)',
+    '練習中1万ゲーム課金(爆死)'
+  ] },
+  { name: 'ロバート', part: 'V.P.', color: '#00479d', image: '/member6.jpg', description: [
+    '一昔前の面白ネタとかをよく知ってる',
+    'シンバル不発男',
+    'どんだけいじられてもへこたれない',
+    '歩く音MAD',
+    'あくび大公開'
+  ] },
 ];
 
 const videos = [

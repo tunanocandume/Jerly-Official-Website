@@ -24,7 +24,15 @@ function MemberModal({ selectedMember, onClose }) {
             <Typography variant="h5" sx={{ marginBottom: '15px', color: '#000000', fontWeight: 'bold', textAlign: 'center' }}>{selectedMember.name}</Typography>
             <Typography variant="body1" sx={{ marginBottom: '15px', color: '#000000', textAlign: 'center' }}>Part: {selectedMember.part}</Typography>
             <Box sx={{ width: '100%', height: '20px', backgroundColor: selectedMember.color, borderRadius: '4px', marginBottom: '15px' }} />
-            <Typography variant="body2" sx={{ color: '#000000', textAlign: 'center', lineHeight: 1.6 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Typography>
+            {selectedMember.description && Array.isArray(selectedMember.description) ? (
+              <Box component="ul" sx={{ color: '#000000', textAlign: 'left', paddingLeft: '18px', margin: 0, lineHeight: 1.6 }}>
+                {selectedMember.description.map((d, i) => (
+                  <li key={i}><Typography variant="body2" sx={{ color: '#000000' }}>{d}</Typography></li>
+                ))}
+              </Box>
+            ) : (
+              <Typography variant="body2" sx={{ color: '#000000', textAlign: 'center', lineHeight: 1.6 }}>{selectedMember.description || ''}</Typography>
+            )}
           </>
         )}
       </Box>

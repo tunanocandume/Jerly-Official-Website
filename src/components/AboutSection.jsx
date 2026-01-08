@@ -3,23 +3,17 @@ import { Box, Typography } from '@mui/material';
 function AboutSection() {
   return (
     <Box sx={{ padding: '40px 0' }}>
-      <Box sx={{ background: 'linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%)', borderRadius: '8px', padding: '30px', marginBottom: '30px', border: '2px solid #000000', boxShadow: '0 8px 24px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.2)' }}>
-        <Typography variant="h4" sx={{ color: '#3959c3', marginBottom: '20px', fontWeight: 'bold', textAlign: 'center' }}>Group Profile</Typography>
-        <Typography variant="body1" sx={{ color: '#000000', marginBottom: '0', lineHeight: 1.6, textAlign: 'center' }}>
-          日本大学アカペラサークルSol-faに所属するアカペラグループです。明確な音楽コンセプトはなく、メンバーの個性を活かして活動しています。
+      <Box sx={{ background: 'linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%)', borderRadius: '8px', padding: '30px', maxWidth: '900px', margin: '0 auto', border: '2px solid #000000', boxShadow: '0 8px 24px rgba(0,0,0,0.12)' }}>
+        <Typography variant="h4" sx={{ color: '#3959c3', marginBottom: '16px', fontWeight: 'bold', textAlign: 'center' }}>Group Profile</Typography>
+        <Typography variant="body1" sx={{ color: '#000000', lineHeight: 1.8, textAlign: 'left' }}>
+          Sol-fa 2024 夏ライブに参加するために同期で結成。最初のグループ名は、「かくしごと」だった。その後、固定バンドとして活動していくにあたって、「Jerly」に改名。グループ名の由来は、結成前にメンバーで行った「JELLY JELLY CAFE」というボードゲームカフェ。
         </Typography>
-      </Box>
-      <Box sx={{ background: 'linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%)', borderRadius: '8px', padding: '30px', border: '2px solid #000000', boxShadow: '0 8px 24px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.2)' }}>
-        <Typography variant="h4" sx={{ color: '#3959c3', marginBottom: '20px', fontWeight: 'bold', textAlign: 'center' }}>How We Play</Typography>
-        <Box sx={{ marginBottom: '15px' }}>
-          <Typography variant="body1" sx={{ color: '#000000', textAlign: 'center' }}>・ライブごとに選曲を変える</Typography>
-        </Box>
-        <Box sx={{ marginBottom: '15px' }}>
-          <Typography variant="body1" sx={{ color: '#000000', textAlign: 'center' }}>・メンバーで相談しながらアレンジを決める</Typography>
-        </Box>
-        <Box sx={{ marginBottom: '0' }}>
-          <Typography variant="body1" sx={{ color: '#000000', textAlign: 'center' }}>・雰囲気重視の練習スタイル</Typography>
-        </Box>
+        <Typography variant="body1" sx={{ color: '#000000', lineHeight: 1.8, marginTop: '12px', textAlign: 'left' }}>
+          メンバーは、全員癖が強いとサークル内で定評がある。
+        </Typography>
+        <Typography variant="body1" sx={{ color: '#000000', lineHeight: 1.8, marginTop: '12px', textAlign: 'left' }}>
+          仲の良さが売りで、クリスマスにはメンバー宅で鍋パを開催した。
+        </Typography>
       </Box>
     </Box>
   );

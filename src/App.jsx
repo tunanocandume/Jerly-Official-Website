@@ -73,6 +73,7 @@ function App() {
   };
 
   const handleMemberClick = (member) => {
+    // Keep behavior simple to avoid viewTransition repositioning issues — show modal centered as before
     setSelectedMember(member);
   };
 

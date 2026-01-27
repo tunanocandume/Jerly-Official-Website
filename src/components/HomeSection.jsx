@@ -1,16 +1,42 @@
 import { Box, Typography, Button } from '@mui/material';
+import { useEffect } from 'react';
 
 function HomeSection({ onNavClick }) {
+  useEffect(() => {
+    // IntersectionObserver fallback for reveal-on-scroll
+    const els = document.querySelectorAll('.reveal-on-scroll');
+    if (!els || els.length === 0) return;
+
+    // If browser supports CSS Scroll-Driven Animations, let CSS handle it.
+    const supportsScrollTimeline = typeof CSS !== 'undefined' && CSS.supports && CSS.supports('animation-timeline: reveal-timeline');
+    if (supportsScrollTimeline) {
+      els.forEach(el => el.setAttribute('data-scroll-timeline', 'reveal'));
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    els.forEach(el => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
     <>
-      <Box sx={{ 
+      <Box className="hero-bg reveal-on-scroll" sx={{ 
         height: '100vh', 
         backgroundImage: 'url(/group_photo.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center' 
       }}>
       </Box>
-      <Box sx={{ 
+      <Box className="reveal-on-scroll" sx={{ 
         backgroundColor: 'rgba(255, 255, 255, 0.9)', 
         padding: '40px', 
         borderRadius: '8px', 

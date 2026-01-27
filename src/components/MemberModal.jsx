@@ -4,7 +4,7 @@ import { Close } from '@mui/icons-material';
 function MemberModal({ selectedMember, onClose }) {
   return (
     <Modal open={!!selectedMember} onClose={onClose}>
-      <Box sx={{
+      <Box className="member-modal-content" sx={{
         position: 'absolute',
         top: '50%',
         left: '50%',

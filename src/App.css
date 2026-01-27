@@ -3,3 +3,46 @@
   padding: 0;
   text-align: left;
 }
+
+/* Scroll-driven / reveal animations (progressive enhancement) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+}
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Experimental CSS Scroll-Driven Animations: if supported, prefer timeline-driven motion */
+@scroll-timeline name reveal-timeline {
+  source: auto;
+  orientation: block;
+}
+.reveal-on-scroll[data-scroll-timeline='reveal'] {
+  animation: revealMove 600ms both ease;
+  animation-timeline: reveal-timeline;
+}
+@keyframes revealMove {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* simple parallax for hero background when supported */
+.hero-bg { background-attachment: fixed; }
+
+.member-modal-content {
+  opacity: 0;
+  /* keep the translate(-50%,-50%) used for centering and animate scale only */
+  transform: translate(-50%,-50%) scale(0.96) translateY(8px);
+  transition: opacity 320ms cubic-bezier(.2,.9,.2,1), transform 320ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+  /* ensure the animation runs when mounted */
+  animation: modalEnter 320ms cubic-bezier(.2,.9,.2,1) both;
+}
+@keyframes modalEnter {
+  from { opacity: 0; transform: translate(-50%,-50%) scale(0.96) translateY(8px); }
+  to   { opacity: 1; transform: translate(-50%,-50%) scale(1) translateY(0); }
+}

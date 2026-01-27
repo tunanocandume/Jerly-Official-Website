@@ -26,7 +26,7 @@ function MemberSection({ members, onMemberClick }) {
   }, []);
 
   return (
-    <Box sx={{ padding: '40px 0', maxWidth: '900px', margin: '0 auto' }}>
+    <Box sx={{ padding: '40px 0', maxWidth: '900px', margin: '0 auto', width: { xs: '94%', sm: '92%', md: '900px' } }}>
       <Typography variant="h4" sx={{ color: '#ffffff', marginBottom: '30px', fontWeight: 'bold', textAlign: 'center' }}>Members</Typography>
       <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' }, gap: { xs: '12px', sm: '18px', md: '24px' } }}>
         {members.map((member, index) => (
@@ -62,7 +62,7 @@ function MemberSection({ members, onMemberClick }) {
                 borderTopRightRadius: '8px'
               }}
             />
-            <CardContent sx={{ padding: '20px' }}>
+            <CardContent sx={{ padding: { xs: '12px', md: '20px' } }}>
               <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
                 <Box>
                   <Box sx={{ width: '20px', height: '20px', backgroundColor: member.color, borderRadius: '50%', marginRight: '10px' }} />

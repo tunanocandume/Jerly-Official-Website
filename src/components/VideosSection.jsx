@@ -31,25 +31,26 @@ function VideosSection({ videos }) {
   return (
     <Box sx={{ padding: '40px 0' }}>
       <Typography variant="h4" sx={{ color: '#ffffff', marginBottom: '30px', fontWeight: 'bold', textAlign: 'center' }}>Videos</Typography>
-      <Grid container spacing={3} justifyContent="center">
-        {videos.map((video, index) => (
-          <Grid item xs={12} sm={6} md={4} key={video.id}>
-            <Card className="reveal-on-scroll" sx={{ borderRadius: '8px', boxShadow: '0 8px 24px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.2)', cursor: 'pointer', background: 'linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%)', border: '2px solid #000000', transition: 'transform 0.3s ease', '&:hover': { transform: 'translateY(-5px)' }, transitionDelay: `${index * 80}ms` }} onClick={() => handleVideoClick(video.videoId)}>
-              <CardMedia
-                component="img"
-                height="200"
-                src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
-                alt={video.title}
-                sx={{ objectFit: 'cover' }}
-              />
-              <CardContent sx={{ padding: '20px' }}>
-                <Typography variant="body1" sx={{ color: '#000000', fontWeight: 'bold', textAlign: 'center' }}>{video.title}</Typography>
-                <Typography variant="body2" sx={{ color: '#666666', textAlign: 'center', marginTop: '8px' }}>{video.live}</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+      <Box sx={{ width: { xs: '94%', sm: '92%', md: '100%' }, margin: '0 auto' }}>
+        <Grid container spacing={2} justifyContent="center">
+          {videos.map((video, index) => (
+            <Grid item xs={12} sm={6} md={4} key={video.id}>
+              <Card className="reveal-on-scroll" sx={{ width: '100%', borderRadius: '8px', boxShadow: '0 8px 24px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.2)', cursor: 'pointer', background: 'linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%)', border: '2px solid #000000', transition: 'transform 0.3s ease', '&:hover': { transform: 'translateY(-5px)' }, transitionDelay: `${index * 80}ms` }} onClick={() => handleVideoClick(video.videoId)}>
+                <CardMedia
+                  component="img"
+                  src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
+                  alt={video.title}
+                  sx={{ objectFit: 'cover', width: '100%', height: { xs: 150, sm: 180, md: 200 } }}
+                />
+                <CardContent sx={{ padding: { xs: '12px', md: '20px' } }}>
+                  <Typography variant="body1" sx={{ color: '#000000', fontWeight: 'bold', textAlign: 'center' }}>{video.title}</Typography>
+                  <Typography variant="body2" sx={{ color: '#666666', textAlign: 'center', marginTop: '8px' }}>{video.live}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Box>
   );
 }

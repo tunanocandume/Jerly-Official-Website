@@ -30,8 +30,10 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* simple parallax for hero background when supported */
-.hero-bg { background-attachment: fixed; }
+/* simple parallax for hero background when supported (desktop only) */
+@media (min-width:1024px) {
+  .hero-bg { background-attachment: fixed; }
+}
 
 .member-modal-content {
   opacity: 0;

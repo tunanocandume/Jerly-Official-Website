@@ -28,7 +28,7 @@ function MemberSection({ members, onMemberClick }) {
   return (
     <Box sx={{ padding: '40px 0', maxWidth: '900px', margin: '0 auto' }}>
       <Typography variant="h4" sx={{ color: '#ffffff', marginBottom: '30px', fontWeight: 'bold', textAlign: 'center' }}>Members</Typography>
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' }, gap: { xs: '12px', sm: '18px', md: '24px' } }}>
         {members.map((member, index) => (
           <Card
             key={member.name}
@@ -42,7 +42,9 @@ function MemberSection({ members, onMemberClick }) {
               border: '2px solid #000000',
               transition: 'transform 0.36s cubic-bezier(.2,.9,.2,1), box-shadow 240ms',
               '&:hover': { transform: 'translateY(-6px) scale(1.01)', boxShadow: '0 14px 36px rgba(0,0,0,0.45)' },
-              transitionDelay: `${index * 80}ms`
+              transitionDelay: `${index * 80}ms`,
+              display: 'flex',
+              flexDirection: 'column'
             }}
           >
             <CardMedia

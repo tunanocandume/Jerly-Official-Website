@@ -50,7 +50,7 @@ function HomeSection({ onNavClick }) {
         zIndex: 1 
       }}>
         <Typography variant="h3" sx={{ marginBottom: { xs: '12px', md: '20px' }, fontWeight: 'bold', fontSize: { xs: '2rem', sm: '2.6rem', md: '4rem' }, color: '#08278f' }}>Jerly</Typography>
-        <Typography variant="body1" sx={{ color: '#000000', marginBottom: { xs: '18px', md: '30px' }, maxWidth: '700px', mx: 'auto', textAlign: 'center', lineHeight: 1.6, fontSize: { xs: '0.95rem', sm: '1rem' } }}>
+        <Typography variant="body1" sx={{ color: '#000000', marginBottom: { xs: '18px', md: '30px' }, maxWidth: '700px', margin: '0 auto 30px', lineHeight: 1.6, fontSize: { xs: '0.95rem', sm: '1rem' } }}>
           日本大学アカペラサークルSol-faに所属するアカペラグループ、Jerlyの公式サイトです。
           <br />
           ここでは、メンバー紹介と、今までのライブで披露した際の動画を掲載しています。
